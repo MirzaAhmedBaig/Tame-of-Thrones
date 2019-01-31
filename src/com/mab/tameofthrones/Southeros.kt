@@ -1,6 +1,8 @@
 package com.mab.tameofthrones
 
+import com.mab.tameofthrones.breakerofchains.Priest
 import com.mab.tameofthrones.common.KingdomNotFoundException
+import getCompetingKingdoms
 
 class Southeros {
 
@@ -13,9 +15,10 @@ class Southeros {
             Kingdom("fire", "dragon")
     )
 
+    private val priest = Priest()
+
     fun getKingdomByName(name: String): Kingdom {
         try {
-
             return kingdomList.first { it.name == name.toLowerCase() }
         } catch (exception: NoSuchElementException) {
             throw KingdomNotFoundException("Kingdom with name:$name doesnot exists")
@@ -23,13 +26,24 @@ class Southeros {
     }
 
     fun getRuler(): Kingdom? {
-
         kingdomList.forEach {
-            if (it.getAllies().allegiances.size >= 3)
+            if (it.getAllies().alliances.size >= 3)
                 return it
         }
         return null
-
     }
+
+    fun getRulerByMajorityOfAlliance(): Kingdom? {
+        with(getCompetingKingdoms()) {
+            return if (this.size == 1)
+                this.first()
+            else
+                null
+        }
+    }
+
+    fun getPriest() = priest
+
+    fun getAllKingdoms() = kingdomList
 
 }

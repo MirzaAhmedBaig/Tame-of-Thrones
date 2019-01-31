@@ -1,6 +1,9 @@
 package com.mab.tameofthrones.breakerofchains
 
-class BreakerOfChainsMain{
 
-
+fun main(args: Array<String>) {
+    val breakerOfChainsChallenge = BreakerOfChainsChallenge()
+    breakerOfChainsChallenge.startTameOfThrones()
 }
+/*
+Ice Space Air*/

@@ -14,7 +14,7 @@ class GoldenCrownChallenge {
 
     private fun showResult() {
         println("Who is the ruler of Southeros?")
-        println("Output: ${southeros.getRuler() ?: "None"}")
+        println("Output: ${southeros.getRuler()?.name ?: "None"}")
         println("Allies of Ruler?")
         println("Output: ${southeros.getRuler()?.getAllies()?.getHasAlliesAsString() ?: "None"}")
     }
