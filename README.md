@@ -1,4 +1,6 @@
-This project has solution for two problems : 1)A Golden Crown 2) Breaker of chains
+This project has solution for two problems : 
+1)A Golden Crown 
+2) Breaker of chains
 
 Language used:
 Kotlin
